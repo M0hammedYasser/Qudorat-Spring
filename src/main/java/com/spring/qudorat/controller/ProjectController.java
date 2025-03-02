@@ -1,6 +1,8 @@
 package com.spring.qudorat.controller;
 
+import com.spring.qudorat.model.dto.ProjectInvoiceResponse;
 import com.spring.qudorat.model.dto.ProjectResponse;
+import com.spring.qudorat.model.dto.TestResponseInvoice;
 import com.spring.qudorat.model.entity.Project;
 import com.spring.qudorat.service.ProjectService;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +23,7 @@ public class ProjectController {
     }
 
     @GetMapping("/{id}")
-    public ProjectResponse findById(@PathVariable int id) {
+    public ProjectInvoiceResponse findById(@PathVariable int id) {
         return service.findById(id);
     }
 

@@ -1,6 +1,8 @@
 package com.spring.qudorat.service;
 
+import com.spring.qudorat.model.dto.ProjectInvoiceResponse;
 import com.spring.qudorat.model.dto.ProjectResponse;
+import com.spring.qudorat.model.dto.TestResponseInvoice;
 import com.spring.qudorat.model.entity.Project;
 import com.spring.qudorat.model.mapper.ProjectMapper;
 import com.spring.qudorat.repository.ProjectRepository;
@@ -20,8 +22,8 @@ public class ProjectService {
         return mapper.map(repository.findAll());
     }
 
-    public ProjectResponse findById(int id) {
-        return mapper.map(repository.findById(id).orElseThrow(() -> new RuntimeException("Project not found")));
+    public ProjectInvoiceResponse findById(int id) {
+        return mapper.mapInvoice(repository.findById(id).orElseThrow(() -> new RuntimeException("Project not found")));
     }
 
     public ProjectResponse save(Project project) {

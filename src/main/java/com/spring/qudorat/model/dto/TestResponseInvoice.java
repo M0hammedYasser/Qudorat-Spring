@@ -1,29 +1,23 @@
 package com.spring.qudorat.model.dto;
 
+import com.spring.qudorat.model.entity.TestManager;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class TestResponse {
-
+public class TestResponseInvoice {
 
     private int id;
 
     private float price;
 
-    private boolean isPaid;
-
     private LocalDate date;
 
-    private ProjectResponse project;
+    private TestManager testManager;
 
-    private TestManagerResponse testManager;
-
-    private List<SieveAnalysisResponse> sieveAnalyses;
 }

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Setter
 @Getter
@@ -18,4 +20,7 @@ public class Project {
 
     @ManyToOne
     private Client client;
+
+    @OneToMany(mappedBy = "project")
+    private List<Test> tests;
 }

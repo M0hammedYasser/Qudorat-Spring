@@ -14,14 +14,17 @@ public class TestMapper {
 
     private final ProjectMapper projectMapper;
     private final TestManagerMapper testManagerMapper;
+    private final SieveAnalysisMapper sieveAnalysisMapper;
 
     public TestResponse map(Test test) {
         return TestResponse.builder()
                 .id(test.getId())
                 .price(test.getPrice())
+                .isPaid(test.isPaid())
                 .date(test.getDate())
                 .project(projectMapper.map(test.getProject()))
                 .testManager(testManagerMapper.map(test.getTestManager()))
+                .sieveAnalyses(sieveAnalysisMapper.map(test.getSieveAnalyses()))
                 .build();
     }
 

@@ -1,5 +1,6 @@
 package com.spring.qudorat.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +20,8 @@ public class Test {
     @Column(nullable = false)
     private float price;
 
+    private boolean isPaid;
+
     @Column(nullable = false)
     private LocalDate date;
 
@@ -29,5 +32,6 @@ public class Test {
     private TestManager testManager;
 
     @OneToMany(mappedBy = "test")
-    private List<Trial> trials;
+    private List<SieveAnalysis> sieveAnalyses;
+
 }
